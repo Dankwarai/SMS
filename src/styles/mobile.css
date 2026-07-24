@@ -1,0 +1,85 @@
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    /* Layout */
+    #app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 45;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.visible {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Header */
+    .header {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .hamburger-btn {
+        display: flex !important;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--color-text-main);
+    }
+
+    .search-bar {
+        display: none;
+        /* Hide search on mobile for simplicity or make it collapsible */
+    }
+
+    /* Dashboard Grid */
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Tables */
+    .table-container,
+    .card {
+        overflow-x: auto;
+    }
+
+    .table {
+        min-width: 600px;
+        /* Force scroll */
+    }
+}
+
+/* Desktop defaults */
+.hamburger-btn {
+    display: none;
+}
